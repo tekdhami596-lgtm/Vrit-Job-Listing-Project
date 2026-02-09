@@ -3,14 +3,14 @@ import JobCard from "./JobCard";
 import JobDetails from "./JobDetails";
 import { getJobData } from "../jobData";
 import JobCardSkeleton from "./JobCardSkeleton";
-// import ReactPaginate from "react-paginate";
+
 
 export default function JobList() {
   const [search, setSearch] = useState("");
   const [debounceSearch, setDebounceSearch] = useState("");
   const [selectedJob, setSelectedJob] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [jobsData, setJobsData] = useState(null);
+  const [jobsData, setJobsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const jobsPerPage = 6;
 
@@ -29,21 +29,7 @@ export default function JobList() {
     return () => clearTimeout(handler);
   }, [search, jobsData]);
 
-  if (loading) {
-    return (
-      <div className="mt-40 max-w-7xl mx-auto px-4">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-          {Array(6)
-            .fill(0)
-            .map((_, id) => (
-              <JobCardSkeleton key={id} />
-            ))}
-        </div>
-      </div>
-    );
-  }
-
-  const filteredJobs = jobsData.filter((job) =>
+  const filteredJobs = jobsData?.filter((job) =>
     job.title.toLowerCase().includes(debounceSearch.toLowerCase()),
   );
 
@@ -68,12 +54,16 @@ export default function JobList() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {currentJobs.map((job) => (
-            <JobCard key={job.id} job={job} onView={setSelectedJob} />
-          ))}
+          {loading
+            ? Array(6)
+                .fill(0)
+                .map((_, id) => <JobCardSkeleton key={id} />)
+            : currentJobs.map((job) => (
+                <JobCard key={job.id} job={job} onView={setSelectedJob} />
+              ))}
         </div>
 
-        {/* Pagination */}
+        
         {totalPages > 1 && (
           <div className="flex justify-center items-center mt-8 gap-2">
             <button
