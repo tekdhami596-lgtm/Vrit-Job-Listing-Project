@@ -26,6 +26,7 @@ Users can browse jobs, search by title with debouncing, view job details in a po
 ---
 
 ## 📂 Project Structure
+
 src/
 ├── components/
 │ ├── JobCard.jsx
@@ -35,3 +36,6 @@ src/
 ├── App.jsx
 └── main.jsx
 
+# Vrit-Job-Listing-Project
+
+A modern job listing web application built with React and Tailwind CSS featuring debounced search, pagination, job detail modal, and apply toast notifications.
