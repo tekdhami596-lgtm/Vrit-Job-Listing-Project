@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import JobDetails from "./JobDetails";
 import { jobsData } from "../jobData";
+import JobCardSkeleton from "./JobCardSkeleton";
 // import ReactPaginate from "react-paginate";
 
 export default function JobList() {
@@ -9,12 +10,14 @@ export default function JobList() {
   const [debounceSearch, setDebounceSearch] = useState("");
   const [selectedJob, setSelectedJob] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
   const jobsPerPage = 6;
 
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebounceSearch(search);
       setCurrentPage(1);
+      setLoading(false);
     }, 300);
     return () => clearTimeout(handler);
   }, [search]);
@@ -32,7 +35,9 @@ export default function JobList() {
     <div className="min-h-screen bg-white-50 px-4 py-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-          <h2 className="text-3xl font-bold text-black-900">Vrit Job Listings</h2>
+          <h2 className="text-3xl font-bold text-black-900">
+            Vrit Job Listings
+          </h2>
           <input
             type="text"
             placeholder="Search jobs..."
@@ -43,9 +48,13 @@ export default function JobList() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {currentJobs.map((job) => (
-            <JobCard key={job.id} job={job} onView={setSelectedJob} />
-          ))}
+          {loading
+            ? Array(6)
+                .fill(0)
+                .map((_, id) => <JobCardSkeleton key={id} />)
+            : currentJobs.map((job) => (
+                <JobCard key={job.id} job={job} onView={setSelectedJob} />
+              ))}
         </div>
 
         {/* Pagination */}
