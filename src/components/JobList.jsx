@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import JobDetails from "./JobDetails";
-import { jobsData } from "../jobData";
+import { getJobData } from "../jobData";
 import JobCardSkeleton from "./JobCardSkeleton";
 // import ReactPaginate from "react-paginate";
 
@@ -10,6 +10,7 @@ export default function JobList() {
   const [debounceSearch, setDebounceSearch] = useState("");
   const [selectedJob, setSelectedJob] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [jobsData, setJobsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const jobsPerPage = 6;
 
@@ -17,16 +18,35 @@ export default function JobList() {
     const handler = setTimeout(() => {
       setDebounceSearch(search);
       setCurrentPage(1);
+    }, 300000);
+
+    const loadJobs = async () => {
+      setJobsData(await getJobData());
       setLoading(false);
-    }, 300);
+    };
+
+    loadJobs();
     return () => clearTimeout(handler);
-  }, [search]);
+  }, [search, jobsData]);
+
+  if (loading) {
+    return (
+      <div className="mt-40 max-w-7xl mx-auto px-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+          {Array(6)
+            .fill(0)
+            .map((_, id) => (
+              <JobCardSkeleton key={id} />
+            ))}
+        </div>
+      </div>
+    );
+  }
 
   const filteredJobs = jobsData.filter((job) =>
     job.title.toLowerCase().includes(debounceSearch.toLowerCase()),
   );
 
-  // Pagination
   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
   const startIndex = (currentPage - 1) * jobsPerPage;
   const currentJobs = filteredJobs.slice(startIndex, startIndex + jobsPerPage);
@@ -48,13 +68,9 @@ export default function JobList() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {loading
-            ? Array(6)
-                .fill(0)
-                .map((_, id) => <JobCardSkeleton key={id} />)
-            : currentJobs.map((job) => (
-                <JobCard key={job.id} job={job} onView={setSelectedJob} />
-              ))}
+          {currentJobs.map((job) => (
+            <JobCard key={job.id} job={job} onView={setSelectedJob} />
+          ))}
         </div>
 
         {/* Pagination */}

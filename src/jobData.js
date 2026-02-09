@@ -25,8 +25,7 @@ export const jobsData = [
     company: "CloudNine",
     location: "Seattle, WA",
     type: "Full-time",
-    description:
-      "Design and implement scalable backend services and APIs.",
+    description: "Design and implement scalable backend services and APIs.",
     skills: ["Node.js", "Express", "PostgreSQL", "REST API"],
   },
   {
@@ -45,8 +44,7 @@ export const jobsData = [
     company: "Design Studio",
     location: "New York, NY",
     type: "Full-time",
-    description:
-      "Create intuitive and visually appealing user interfaces.",
+    description: "Create intuitive and visually appealing user interfaces.",
     skills: ["Figma", "Adobe XD", "User Research"],
   },
   {
@@ -75,8 +73,7 @@ export const jobsData = [
     company: "AppWorks",
     location: "San Diego, CA",
     type: "Full-time",
-    description:
-      "Develop cross-platform mobile applications.",
+    description: "Develop cross-platform mobile applications.",
     skills: ["React Native", "TypeScript", "API Integration"],
   },
   {
@@ -85,8 +82,7 @@ export const jobsData = [
     company: "DroidLabs",
     location: "Chicago, IL",
     type: "Full-time",
-    description:
-      "Build and maintain native Android applications.",
+    description: "Build and maintain native Android applications.",
     skills: ["Kotlin", "Android SDK", "REST APIs"],
   },
   {
@@ -95,8 +91,7 @@ export const jobsData = [
     company: "AppleTree Tech",
     location: "Cupertino, CA",
     type: "Full-time",
-    description:
-      "Develop high-performance iOS applications.",
+    description: "Develop high-performance iOS applications.",
     skills: ["Swift", "iOS SDK", "UIKit"],
   },
   {
@@ -105,8 +100,7 @@ export const jobsData = [
     company: "InfraCloud",
     location: "Denver, CO",
     type: "Full-time",
-    description:
-      "Manage CI/CD pipelines and cloud infrastructure.",
+    description: "Manage CI/CD pipelines and cloud infrastructure.",
     skills: ["AWS", "Docker", "Kubernetes"],
   },
   {
@@ -115,8 +109,7 @@ export const jobsData = [
     company: "ScaleOps",
     location: "Remote",
     type: "Full-time",
-    description:
-      "Ensure reliability and performance of production systems.",
+    description: "Ensure reliability and performance of production systems.",
     skills: ["Linux", "Monitoring", "Cloud"],
   },
   {
@@ -125,8 +118,7 @@ export const jobsData = [
     company: "QualityFirst",
     location: "Phoenix, AZ",
     type: "Full-time",
-    description:
-      "Test applications and ensure product quality.",
+    description: "Test applications and ensure product quality.",
     skills: ["Manual Testing", "Automation", "Selenium"],
   },
   {
@@ -135,8 +127,7 @@ export const jobsData = [
     company: "TestPro",
     location: "Dallas, TX",
     type: "Full-time",
-    description:
-      "Build and maintain automated test suites.",
+    description: "Build and maintain automated test suites.",
     skills: ["Cypress", "Playwright", "JavaScript"],
   },
   {
@@ -145,8 +136,7 @@ export const jobsData = [
     company: "DataMind",
     location: "New York, NY",
     type: "Full-time",
-    description:
-      "Analyze data and generate business insights.",
+    description: "Analyze data and generate business insights.",
     skills: ["SQL", "Excel", "Power BI"],
   },
   {
@@ -155,8 +145,7 @@ export const jobsData = [
     company: "AI Labs",
     location: "San Jose, CA",
     type: "Full-time",
-    description:
-      "Build predictive models and analyze complex datasets.",
+    description: "Build predictive models and analyze complex datasets.",
     skills: ["Python", "Machine Learning", "Pandas"],
   },
   {
@@ -165,8 +154,7 @@ export const jobsData = [
     company: "NeuralNet",
     location: "Remote",
     type: "Full-time",
-    description:
-      "Deploy and scale machine learning models.",
+    description: "Deploy and scale machine learning models.",
     skills: ["Python", "TensorFlow", "PyTorch"],
   },
   {
@@ -175,8 +163,7 @@ export const jobsData = [
     company: "DeepThink",
     location: "Palo Alto, CA",
     type: "Internship",
-    description:
-      "Assist research team in AI and ML experiments.",
+    description: "Assist research team in AI and ML experiments.",
     skills: ["Python", "Research", "ML Basics"],
   },
   {
@@ -185,8 +172,7 @@ export const jobsData = [
     company: "SecureNet",
     location: "Washington, DC",
     type: "Full-time",
-    description:
-      "Monitor and secure enterprise systems.",
+    description: "Monitor and secure enterprise systems.",
     skills: ["Network Security", "SIEM", "Linux"],
   },
   {
@@ -195,8 +181,7 @@ export const jobsData = [
     company: "HackSafe",
     location: "Remote",
     type: "Contract",
-    description:
-      "Perform penetration testing and vulnerability assessments.",
+    description: "Perform penetration testing and vulnerability assessments.",
     skills: ["Pen Testing", "Burp Suite", "Linux"],
   },
   {
@@ -205,8 +190,7 @@ export const jobsData = [
     company: "SkyCloud",
     location: "Miami, FL",
     type: "Full-time",
-    description:
-      "Design and manage cloud infrastructure.",
+    description: "Design and manage cloud infrastructure.",
     skills: ["AWS", "Terraform", "Docker"],
   },
   {
@@ -215,8 +199,7 @@ export const jobsData = [
     company: "NetCore",
     location: "Atlanta, GA",
     type: "Full-time",
-    description:
-      "Maintain and support IT systems.",
+    description: "Maintain and support IT systems.",
     skills: ["Windows Server", "Linux", "Networking"],
   },
   {
@@ -225,8 +208,7 @@ export const jobsData = [
     company: "HelpDesk Plus",
     location: "Houston, TX",
     type: "Full-time",
-    description:
-      "Provide technical support to internal users.",
+    description: "Provide technical support to internal users.",
     skills: ["Troubleshooting", "Hardware", "Networking"],
   },
   {
@@ -235,8 +217,7 @@ export const jobsData = [
     company: "DocuTech",
     location: "Remote",
     type: "Contract",
-    description:
-      "Create clear and concise technical documentation.",
+    description: "Create clear and concise technical documentation.",
     skills: ["Documentation", "Markdown", "APIs"],
   },
   {
@@ -245,9 +226,12 @@ export const jobsData = [
     company: "Visionary Inc.",
     location: "San Mateo, CA",
     type: "Full-time",
-    description:
-      "Define product roadmap and collaborate with teams.",
+    description: "Define product roadmap and collaborate with teams.",
     skills: ["Agile", "Roadmapping", "Communication"],
   },
-
 ];
+
+export const getJobData = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 300));
+  return jobsData;
+};

@@ -3,9 +3,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 function JobCardSkeleton() {
   return (
-    <div className="job-card p-6 border rounded-lg shadow-sm bg-white max-w-md">
+    <div className=" p-6 border rounded-lg shadow-sm bg-white max-w-md">
       <div className="mb-2">
-        <Skeleton width={280} height={28} />
+        <Skeleton width={180} height={28} />
       </div>
 
       <div className="mb-6">
@@ -23,7 +23,7 @@ function JobCardSkeleton() {
         </div>
       </div>
 
-      <div className="flex justify-between gap-5">
+      <div className="flex justify-around gap-5">
         <Skeleton width={140} height={48} borderRadius={8} />
         <Skeleton width={140} height={48} borderRadius={8} />
       </div>
