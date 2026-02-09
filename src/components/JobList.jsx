@@ -4,7 +4,6 @@ import JobDetails from "./JobDetails";
 import { getJobData } from "../jobData";
 import JobCardSkeleton from "./JobCardSkeleton";
 
-
 export default function JobList() {
   const [search, setSearch] = useState("");
   const [debounceSearch, setDebounceSearch] = useState("");
@@ -18,7 +17,7 @@ export default function JobList() {
     const handler = setTimeout(() => {
       setDebounceSearch(search);
       setCurrentPage(1);
-    }, 300000);
+    }, 300);
 
     const loadJobs = async () => {
       setJobsData(await getJobData());
@@ -63,7 +62,6 @@ export default function JobList() {
               ))}
         </div>
 
-        
         {totalPages > 1 && (
           <div className="flex justify-center items-center mt-8 gap-2">
             <button
